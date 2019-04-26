@@ -11,7 +11,7 @@ limit:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/luckymoney?serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/luckymoney?serverTimezone=UTC&characterEncoding=utf-8
     username: root
     password:
   jpa:
