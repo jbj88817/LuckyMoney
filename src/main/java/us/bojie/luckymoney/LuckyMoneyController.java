@@ -15,8 +15,14 @@ import java.util.Optional;
 @RestController
 public class LuckyMoneyController {
 
+    private final LuckyMoneyRepository repository;
+    private final LuckyMoneyService service;
+
     @Autowired
-    private LuckyMoneyRepository repository;
+    public LuckyMoneyController(LuckyMoneyRepository repository, LuckyMoneyService service) {
+        this.repository = repository;
+        this.service = service;
+    }
 
     @GetMapping("/luckymoneys")
     public List<LuckyMoney> list() {
@@ -47,5 +53,10 @@ public class LuckyMoneyController {
             return repository.save(money);
         }
         return null;
+    }
+
+    @PostMapping("/luckymoneys/two")
+    public void createTwo() {
+        service.createTwo();
     }
 }
